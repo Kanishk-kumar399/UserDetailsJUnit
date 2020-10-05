@@ -35,10 +35,14 @@ public class UserRegistration
 	}
     public String checkEmail(String emailId)
     {
-    	String regex="[0-9a-zA-Z]+([+._-][0-9a-zA-Z]+)*"+"@([0-9a-zA-Z][-]?)+[.][a-zA-z]{2,4}$";
+    	String regex="^[0-9a-zA-Z]+([+._-]{1}[0-9a-zA-Z]+)?@[0-9a-zA-Z]+[.]{1}[a-zA-z]{2,4}([.]{1}[a-zA-z]{2,3})?$";
     	if(emailId.matches(regex))
 			return "Happy";
 		else
 			return "Sad";
+    }
+    public boolean checkMultipleEmail(String email)
+    {
+    	return email.matches("^[0-9a-zA-Z]+([+._-]{1}[0-9a-zA-Z]+)?@[0-9a-zA-Z]+[.]{1}[a-zA-z]{2,4}([.]{1}[a-zA-z]{2,3})?$");
     }
 }
