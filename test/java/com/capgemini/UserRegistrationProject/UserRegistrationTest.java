@@ -8,7 +8,7 @@ public class UserRegistrationTest {
 	public void givenFirstName_WhenProper_ShouldReturnHappy() {
 		try {
 		UserRegistration user= new UserRegistration();
-		String result=user.checkFirstName("Kanishk");
+		boolean result=user.checkFirstName("Kanishk");
 		Assert.assertEquals("Happy",result);
 		}
 		catch(UserRegistrationException e)
@@ -20,7 +20,7 @@ public class UserRegistrationTest {
 	public void givenFirstName_WhenImProper_ShouldReturnSad() {
 		try {
 		UserRegistration user= new UserRegistration();
-		String result=user.checkFirstName("sdishk");
+		boolean result=user.checkFirstName("sdishk");
 		Assert.assertEquals("Sad",result);
 		}
 		catch(UserRegistrationException e)
@@ -32,7 +32,7 @@ public class UserRegistrationTest {
 	public void givenlastName_WhenProper_ShouldReturnHappy() {
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkLastName("Kumar");
+		boolean result=user.checkLastName("Kumar");
 		Assert.assertEquals("Happy",result);
 		}
 		catch(UserRegistrationException e)
@@ -44,7 +44,7 @@ public class UserRegistrationTest {
 	public void givenlastName_WhenImProper_ShouldReturnSad() {
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkLastName("@mar");
+		boolean result=user.checkLastName("@mar");
 		Assert.assertEquals("Sad",result);
 		}
 		catch(UserRegistrationException e)
@@ -57,7 +57,7 @@ public class UserRegistrationTest {
 	{
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkEmail("kanishk@gmail.com");
+		boolean result=user.checkEmail("kanishk@gmail.com");
 		Assert.assertEquals("Happy",result);
 		}
 		catch(UserRegistrationException e)
@@ -70,7 +70,7 @@ public class UserRegistrationTest {
 	{
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkEmail("kanish..ail.com");
+		boolean result=user.checkEmail("kanish..ail.com");
 		Assert.assertEquals("Sad",result);
 		}
 		catch(UserRegistrationException e)
@@ -83,7 +83,7 @@ public class UserRegistrationTest {
 	{
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkMobileNumber("91 9673648343");
+		boolean result=user.checkMobileNumber("91 9673648343");
 		Assert.assertEquals("Happy",result);
 		}
 		catch(UserRegistrationException e)
@@ -96,7 +96,7 @@ public class UserRegistrationTest {
 	{
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkMobileNumber("9678343");
+		boolean result=user.checkMobileNumber("9678343");
 		Assert.assertEquals("Sad",result);
 		}
 		catch(UserRegistrationException e)
@@ -109,7 +109,7 @@ public class UserRegistrationTest {
 	{
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkPassword("Kanishk1*");
+		boolean result=user.checkPassword("Kanishk1*");
 		Assert.assertEquals("Happy",result);	
 		}
 		catch(UserRegistrationException e)
@@ -122,7 +122,7 @@ public class UserRegistrationTest {
 	{
 		try {
 		UserRegistration user=new UserRegistration();
-		String result=user.checkPassword("Kasa1");
+		boolean result=user.checkPassword("Kasa1");
 		Assert.assertEquals("Sad",result);
 		}
 		catch(UserRegistrationException e)
